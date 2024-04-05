@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /gio-hang
+Disallow: /tien-hanh-thanh-toan
+
+User-agent: *
+Allow: /
+
+Sitemap: https://noithatso.com.vn/sitemap.xml

@@ -1,0 +1,513 @@
+export const orderSuccess = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+    <title>Checkout Success</title>
+
+    <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      table {
+        border-collapse: separate;
+        border-spacing: 0;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%;
+      }
+      table td {
+        font-family: sans-serif;
+        font-size: 16px;
+        vertical-align: top;
+      }
+
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+
+      .body {
+        background-color: #f6f6f6;
+        width: 100%;
+      }
+
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 680px;
+        padding: 40px;
+        width: 680px;
+      }
+
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        margin: 0 auto;
+        max-width: 680px;
+      }
+
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        background: #ffffff;
+        border-radius: 3px;
+        width: 100%;
+      }
+
+      .wrapper {
+        box-sizing: border-box;
+        padding: 32px 24px;
+      }
+
+      .footer {
+        background: #ffffff;
+        width: 100%;
+        padding: 32px 24px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      .footer td,
+      .footer p,
+      .footer span {
+        color: #424153;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #181818;
+        font-family: sans-serif;
+        font-weight: 600;
+        line-height: 1.4;
+        margin: 0;
+        margin-bottom: 6px;
+      }
+
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      p,
+      ul,
+      ol {
+        color: #424153;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        margin: 0;
+        margin-bottom: 6px;
+      }
+      p li,
+      ul li,
+      ol li {
+        list-style-position: inside;
+        margin-left: 5px;
+      }
+
+      a {
+        color: #1890ff;
+        text-decoration: underline;
+      }
+
+      /* -------------------------------------
+          LINKS
+      ------------------------------------- */
+      .link-primary {
+        color: #e3a070 !important;
+        text-decoration: none;
+      }
+
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .btn > tbody > tr > td {
+        padding-bottom: 15px;
+      }
+      .btn table {
+        width: auto;
+      }
+      .btn table td {
+        background-color: #ffffff;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .btn a {
+        background-color: #ffffff;
+        border: solid 1px #3498db;
+        border-radius: 5px;
+        box-sizing: border-box;
+        color: #3498db;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0;
+        padding: 12px 25px;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+
+      .btn-primary table td {
+        background-color: #3498db;
+      }
+
+      .btn-primary a {
+        background-color: #3498db;
+        border-color: #3498db;
+        color: #ffffff;
+      }
+
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0;
+      }
+
+      .first {
+        margin-top: 0;
+      }
+
+      .align-center {
+        text-align: center;
+      }
+
+      .align-right {
+        text-align: right;
+      }
+
+      .align-left {
+        text-align: left;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .mt0 {
+        margin-top: 0;
+      }
+
+      .mb0 {
+        margin-bottom: 0;
+      }
+
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0;
+      }
+
+      .powered-by a {
+        text-decoration: none;
+      }
+
+      hr {
+        border: 0;
+        border-bottom: 1px solid #e3e3e8;
+        margin: 20px 0;
+      }
+
+      /* -------------------------------------
+          MY STYLES
+      ------------------------------------- */
+      .logo {
+        margin-bottom: 24px;
+        width: 186px;
+        height: auto;
+      }
+      .divider-section {
+        margin: 0;
+        border-bottom: 4px solid #e3a070;
+      }
+      .order-code {
+        font-size: 32px;
+        font-family: sans-serif;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 2.56px;
+        text-align: center;
+      }
+
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table.body h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important;
+        }
+        table.body p,
+        table.body ul,
+        table.body ol,
+        table.body td,
+        table.body span,
+        table.body a {
+          font-size: 14px !important;
+        }
+        table.body .wrapper,
+        table.body .article {
+          padding: 20px 12px !important;
+        }
+        table.body .container {
+          padding: 0px !important;
+          width: 100% !important;
+        }
+        table.body .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important;
+        }
+        table.body .footer br {
+          display: none !important;
+        }
+        table.body .btn table {
+          width: 100% !important;
+        }
+        table.body .btn a {
+          width: 100% !important;
+        }
+        table.body .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important;
+        }
+        table.body .logo {
+          width: 160px !important;
+          margin-bottom: 20px !important;
+        }
+        table.body .order-code {
+          font-size: 26px !important;
+        }
+      }
+
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%;
+        }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%;
+        }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important;
+        }
+        .btn-primary table td:hover {
+          background-color: #34495e !important;
+        }
+        .btn-primary a:hover {
+          background-color: #34495e !important;
+          border-color: #34495e !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table border="0" cellpadding="0" cellspacing="0" class="body">
+      <tbody>
+        <tr>
+          <td></td>
+          <td class="container">
+            <div class="content">
+              <!-- START CENTERED WHITE CONTAINER -->
+              <span class="preheader"></span>
+              <table class="main">
+                <!-- START MAIN CONTENT AREA -->
+                <tbody>
+                  <tr>
+                    <td class="wrapper">
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img
+                                class="logo"
+                                src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1694486993544_242376/logo-black-2@3x.png"
+                                alt=""
+                              />
+                              <h3><b>Xin chào {{name}},</b></h3>
+                              <p>
+                                Cảm ơn bạn đã đặt hàng tại
+                                <a
+                                  class="link-primary"
+                                  href="https://noithatso.com.vn"
+                                  target="_blank"
+                                  >Nội Thất Số</a
+                                >
+                              </p>
+                              <p>
+                                Dưới đây là mã đơn hàng của bạn. Vui lòng
+                                <a
+                                  href="https://noithatso.com.vn/kiem-tra-don-hang?order_code={{order_no}}"
+                                  >truy cập vào website</a
+                                >
+                                để xem chi tiết đơn hàng.
+                              </p>
+                            </td>
+                          </tr>
+                          <!-- <tr>
+                            <td>
+                              <table
+                                border="0"
+                                cellpadding="0"
+                                cellspacing="0"
+                                class="btn btn-primary"
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td align="left">
+                                      <table
+                                        border="0"
+                                        cellpadding="0"
+                                        cellspacing="0"
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td>
+                                              <a
+                                                href="http://htmlemail.io"
+                                                target="_blank"
+                                                >Email Call To Action</a
+                                              >
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr> -->
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <hr class="divider-section" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="wrapper">
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td class="align-center">
+                              <code class="order-code mb0">{{order_no}}</code>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <hr class="divider-section" />
+                    </td>
+                  </tr>
+
+                  <!-- END MAIN CONTENT AREA -->
+                </tbody>
+              </table>
+
+              <!-- START FOOTER -->
+              <div class="footer">
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p>
+                          Cần giúp đỡ? Hỏi tại
+                          <a
+                            class="link-primary"
+                            href="mailto:support@noithatso.com.vn"
+                            target="_blank"
+                            >support@noithatso.com.vn</a
+                          >
+                        </p>
+                        <hr />
+                        <h2>Nội Thất Số</h2>
+                        <br />
+                        <p>
+                          Tầng 1, Số 179 Trần Hưng Đạo, Phường An Hải Bắc, Quận
+                          Sơn Trà, <br />Thành phố Đà Nẵng, Việt Nam.
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="powered-by">
+                        Bản quyền © 2022 Công ty. Đã đăng ký Bản quyền.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- END FOOTER -->
+
+              <!-- END CENTERED WHITE CONTAINER -->
+            </div>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+`;
